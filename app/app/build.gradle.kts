@@ -58,6 +58,7 @@ android {
             path = file("src/main/cpp/CMakeLists.txt")
         }
     }
+    namespace = "com.octo4a"
 
 }
 

@@ -62,14 +62,14 @@ class CameraEnumerationRepository(val context: Context) {
                     val sensorInfoPixelArraySize =
                         characteristics.get(CameraCharacteristics.SENSOR_INFO_PIXEL_ARRAY_SIZE)
                     val megapixels =
-                        (sensorInfoPixelArraySize.width * sensorInfoPixelArraySize.height) / 1000000
+                        (sensorInfoPixelArraySize!!.width * sensorInfoPixelArraySize!!.height) / 1000000
                     val facing = characteristics.get(CameraCharacteristics.LENS_FACING)
                     val configs = characteristics.get(
                         CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP
                     )
                     val sizes = configs?.getOutputSizes(ImageFormat.YUV_420_888)
                         ?.map { size -> CameraSize(size.width, size.height) }
-                    CameraDescription(it, megapixels, facing, sizes ?: emptyList())
+                    CameraDescription(it, megapixels, facing!!, sizes ?: emptyList())
                 }.toMutableList()
             } else {
                 val needToRestartService = context.isServiceRunning(LegacyCameraService::class.java)

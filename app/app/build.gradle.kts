@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk = 28
+    compileSdk = 31
     buildToolsVersion = "30.0.3"
     defaultConfig {
         applicationId = "com.octo4a"
-        minSdk = 17
-        targetSdk = 28
+        minSdk = 22
+        targetSdk = 31
         versionName = "1.2.5"
         versionCode = 1001002
         multiDexEnabled = true
@@ -69,7 +69,7 @@ dependencies {
     implementation("com.android.support:multidex:1.0.3")
     val lifecycleVersion = "2.3.0"
     val ktorVersion = "1.5.2"
-    val koinVersion = "3.1.2"
+    val koinVersion = "3.2.2"
     val cameraXVersion = "1.0.0"
 
     // Android lifecycle components
@@ -133,7 +133,7 @@ dependencies {
 
     // Test dependencies
     testImplementation("junit:junit:4.13")
-    androidTestImplementation("androidx.test.ext:junit:1.1.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
 
 }

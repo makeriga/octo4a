@@ -24,7 +24,7 @@ constructor(private val ctx: Context, private val attributeSet: AttributeSet? = 
             // copy ipAddressTextView.text to clipboard
             val clipboard =
                 ctx.applicationContext.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            clipboard.primaryClip = ClipData.newPlainText("octo4a", ipAddressTextView.text)
+            clipboard.setPrimaryClip(ClipData.newPlainText("octo4a", ipAddressTextView.text))
 
             // Only show a toast for Android 12 and lower.
             if (Build.VERSION.SDK_INT <= 32) { // API 32 is Android 12

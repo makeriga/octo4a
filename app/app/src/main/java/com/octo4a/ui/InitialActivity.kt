@@ -109,7 +109,7 @@ class InitialActivity: AppCompatActivity() {
 
     private fun isNetworkConnected(): Boolean {
         val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        return cm.activeNetworkInfo != null && cm.activeNetworkInfo.isConnected
+        return cm.activeNetworkInfo != null && cm.activeNetworkInfo!!.isConnected
     }
 
     private fun startOctoService() {

@@ -26,7 +26,7 @@ class BootReceiver: BroadcastReceiver() {
         try {
             val restartTime = (1000 * 5).toLong()
             val intents = context.packageManager.getLaunchIntentForPackage(context.packageName)
-            val restartIntent = PendingIntent.getActivity(context, 0, intents, PendingIntent.FLAG_ONE_SHOT)
+            val restartIntent = PendingIntent.getActivity(context, 0, intents, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_ONE_SHOT)
             val mgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 mgr.setExactAndAllowWhileIdle(

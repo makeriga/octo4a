@@ -61,7 +61,7 @@ class OctoPrintService() : LifecycleService() {
 
     private val notificationBuilder by lazy {
         val notificationIntent = Intent(this, MainActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
+        val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE)
 
         NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("OctoPrint")

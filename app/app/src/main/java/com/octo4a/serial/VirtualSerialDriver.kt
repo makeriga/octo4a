@@ -90,7 +90,7 @@ class VirtualSerialDriver(val context: Context, private val prefs: MainPreferenc
                 val intent = Intent(OctoPrintService.BROADCAST_SERVICE_USB_GOT_ACCESS)
                 requestedDevice = device
                 val mPendingIntent =
-                    PendingIntent.getBroadcast(context, usbPermissionRequestCode, intent, 0)
+                    PendingIntent.getBroadcast(context, usbPermissionRequestCode, intent, PendingIntent.FLAG_IMMUTABLE)
                 usbManager.requestPermission(device.device, mPendingIntent)
                 logger.log(this) { "REQUESTED DEVICE" }
                 Toast.makeText(context, context.getString(R.string.requesting_usb_permission), Toast.LENGTH_LONG).show()

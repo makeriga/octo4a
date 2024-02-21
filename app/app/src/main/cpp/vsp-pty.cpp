@@ -158,12 +158,13 @@ extern "C"
     __android_log_print(ANDROID_LOG_VERBOSE, "TAG", "PtyThread getting ready");
 
     char name[256];
-    openpty(&master, &slave, name, nullptr, nullptr);
-    __android_log_print(ANDROID_LOG_VERBOSE, "TAG", "PtyThread called openpty");
+    int openpty_status = openpty(&master, &slave, name, nullptr, nullptr);
+    __android_log_print(ANDROID_LOG_DEBUG, "TAG", "PtyThread called openpty, status=%d", openpty_status);
 
-    unlink("/data/data/com.octo4a/files/serialpipe");
-    symlink(name, "/data/data/com.octo4a/files/serialpipe");
-    __android_log_print(ANDROID_LOG_VERBOSE, "TAG", "SYMLIKED");
+    int unlink_status = unlink("/data/data/com.octo4a/files/serialpipe");
+    __android_log_print(ANDROID_LOG_DEBUG, "TAG", "UNLINK name=/data/data/com.octo4a/files/serialpipe, state=%d", unlink_status);
+    int symlink_status = symlink(name, "/data/data/com.octo4a/files/serialpipe");
+    __android_log_print(ANDROID_LOG_DEBUG, "TAG", "SYMLINKED name=%s, state=%d", name, symlink_status);
 
     // Prepare fds
     fd_set rfds, xfds;

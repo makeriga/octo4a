@@ -46,7 +46,7 @@ class BootstrapRepositoryImpl(
         val HOME_PATH = "$FILES_PATH/home"
     }
 
-    val filesPath: String by lazy { context.getExternalFilesDir(null).absolutePath }
+    val filesPath: String by lazy { "/data/data/com.octo4a/files" }
     private var _commandsFlow = MutableSharedFlow<String>(100)
     override val commandsFlow: SharedFlow<String>
         get() = _commandsFlow
@@ -230,6 +230,10 @@ class BootstrapRepositoryImpl(
         if (!directory.exists()) {
             directory.mkdirs()
         }
+        val filesDirectory = File(FILES)
+        if (!filesDirectory.exists()) {
+            filesDirectory.mkdirs()
+        }
         val pb = ProcessBuilder()
         pb.redirectErrorStream(true)
         pb.environment()["HOME"] = "$FILES/bootstrap"
@@ -253,10 +257,10 @@ class BootstrapRepositoryImpl(
     }
 
     override fun ensureHomeDirectory() {
-//        val homeFile = File(HOME_PATH)
-//        if (!homeFile.exists()) {
-//            homeFile.mkdir()
-//        }
+        val homeFile = File("/data/data/com.octo4a/files")
+        if (!homeFile.exists()) {
+            homeFile.mkdir()
+        }
     }
 
     override val isSSHConfigured: Boolean

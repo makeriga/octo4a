@@ -41,7 +41,7 @@ class ExtensionsRepositoryImpl(
     private val preferences: MainPreferences,
     private val logger: LoggerRepository,
     private val bootstrapRepository: BootstrapRepository) : ExtensionsRepository {
-    private val extensionsPath by lazy { context.getExternalFilesDir(null).absolutePath + "/extensions" }
+    private val extensionsPath by lazy { "/data/data/com.octo4a/files/extensions" }
     private val extensionMap = mutableMapOf<String, Thread?>()
     val gson by lazy {
         GsonBuilder().create()

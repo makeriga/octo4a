@@ -85,7 +85,7 @@ class OctoPrintHandlerRepositoryImpl(
     private val externalStorageSymlinkPath =
         Environment.getExternalStorageDirectory().path + "/OctoPrint"
     private val octoPrintStoragePath =
-        "${context.getExternalFilesDir(null).absolutePath}/.octoprint"
+        "/data/data/com.octo4a/files/.octoprint"
     private val configFile by lazy {
         File("$octoPrintStoragePath/config.yaml")
     }

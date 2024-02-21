@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
-    id("com.bugsnag.android.gradle")
     id("com.gladed.androidgitversion") version "0.4.14"
 }
 
@@ -127,9 +126,6 @@ dependencies {
     implementation("io.ktor:ktor-client-android:$ktorVersion")
     implementation("io.ktor:ktor-client-gson:$ktorVersion")
     implementation("org.nanohttpd:nanohttpd:2.3.1")
-
-    // Bugsnag bug reporting
-    implementation("com.bugsnag:bugsnag-android:5.12.0")
 
     // Test dependencies
     testImplementation("junit:junit:4.13")

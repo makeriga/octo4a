@@ -60,7 +60,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         enableBugReporting?.setOnPreferenceChangeListener { _, newValue ->
             if (newValue as Boolean) {
-                (activity?.application as Octo4aApplication).startBugsnag()
             }
             true
         }

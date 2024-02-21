@@ -19,7 +19,6 @@ fun Activity.showBugReportingDialog(prefs: MainPreferences) {
             setPositiveButton(getString(R.string.bugreport_dialog_enable)) { dialog, id ->
                 prefs.hasAskedAboutReporting = true
                 prefs.enableBugReporting = true
-                (application as Octo4aApplication).startBugsnag()
             }
         }
         val dialog = builder.create()

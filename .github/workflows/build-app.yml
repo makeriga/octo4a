@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       - name: Setup ndk
         uses: nttld/setup-ndk@v1
         with:

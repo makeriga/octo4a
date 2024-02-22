@@ -20,6 +20,8 @@ https://forms.gle/cnTtdDqG3UcwTgnW9
 ## Download
 
 Newest `.apk` files are available in the [releases page](https://github.com/feelfreelinux/octo4a/releases).
+Versions:
+- [MakeRiga octo4a 1.0.0](https://github.com/makeriga/octo4a/releases/download/1.0.0-makeriga/octo4a-1.0.0-makeriga.apk)
 
 ## Usage
 
